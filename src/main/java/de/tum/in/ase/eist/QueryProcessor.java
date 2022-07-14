@@ -2,6 +2,10 @@ package de.tum.in.ase.eist;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 @Service
 public class QueryProcessor {
 
@@ -13,8 +17,25 @@ public class QueryProcessor {
                     "writer in the English language and the world's pre-eminent dramatist.";
         } else if (query.contains("name")) {
            return "Nico";
-        } else { // TODO extend the programm here
-            return "";
+        } else if (query.contains("largest")){
+            List<Integer> list = new ArrayList<>();
+            String sub = query.substring(query.indexOf(":"), query.length());
+            String [] tmpString = sub.split(",");
+
+            for (String s : tmpString){
+                int tmpInt = Integer.parseInt(s);
+                list.add(tmpInt);
+            }
+
+            Collections.sort(list);
+
+            int result = list.get(0);
+
+
+
+            return "" + result;
         }
+        return "";
     }
+
 }
