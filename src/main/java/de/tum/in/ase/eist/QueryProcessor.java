@@ -29,11 +29,14 @@ public class QueryProcessor {
 
             Collections.sort(list);
 
-            int result = list.get(0);
+            int result = list.get(list.size());
 
 
 
             return "" + result;
+        }
+        else if (query.contains("plus")){
+
         }
         return "";
     }
