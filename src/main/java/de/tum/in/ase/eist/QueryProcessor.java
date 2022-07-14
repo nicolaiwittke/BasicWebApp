@@ -36,7 +36,10 @@ public class QueryProcessor {
             return "" + result;
         }
         else if (query.contains("plus")){
-
+            int first = Integer.parseInt(query.substring(query.indexOf("is"), query.indexOf("plus")));
+            int second = Integer.parseInt(query.substring(query.indexOf("plus"), query.length()));
+            int finished = first + second;
+            return "" + finished;
         }
         return "";
     }
