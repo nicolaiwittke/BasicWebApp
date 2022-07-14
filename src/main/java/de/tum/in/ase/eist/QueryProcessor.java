@@ -27,9 +27,9 @@ public class QueryProcessor {
                 list.add(tmpInt);
             }
 
-            Collections.sort(list);
 
-            int result = list.get(list.size());
+
+            int result = Collections.max(list);;
 
 
 
